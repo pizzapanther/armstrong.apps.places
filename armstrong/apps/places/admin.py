@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.utils.translation import ugettext as _
 
 from armstrong.core.arm_content.admin import fieldsets
+from armstrong import hatband
 
 from .models import Place
 
@@ -12,7 +13,7 @@ class PlaceAdmin (admin.ModelAdmin):
       }),
       
       (_('Location'), {
-          'fields': ('address1', 'address2', ('city', 'state'), ('zipcode', 'country')),
+          'fields': ('address1', 'address2', ('city', 'state'), ('zipcode', 'country'), 'coordinate'),
       }),
 
       fieldsets.TAXONOMY,
@@ -20,4 +21,4 @@ class PlaceAdmin (admin.ModelAdmin):
       fieldsets.AUTHORS,
   )
   
-admin.site.register(Place, PlaceAdmin)
+hatband.site.register(Place, PlaceAdmin)

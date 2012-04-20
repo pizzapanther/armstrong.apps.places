@@ -17,7 +17,7 @@ class Migration(SchemaMigration):
             ('city', self.gf('django.db.models.fields.CharField')(max_length=100, null=True, blank=True)),
             ('state', self.gf('django.db.models.fields.CharField')(max_length=100, null=True, blank=True)),
             ('country', self.gf('django.db.models.fields.CharField')(max_length=100, null=True, blank=True)),
-            ('location', self.gf('django.contrib.gis.db.models.fields.PointField')()),
+            ('coordinate', self.gf('django.contrib.gis.db.models.fields.PointField')()),
         ))
         db.send_create_signal('places', ['Place'])
 
@@ -100,8 +100,8 @@ class Migration(SchemaMigration):
             'address2': ('django.db.models.fields.CharField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
             'city': ('django.db.models.fields.CharField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
             'content_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['content.Content']", 'unique': 'True', 'primary_key': 'True'}),
+            'coordinate': ('django.contrib.gis.db.models.fields.PointField', [], {}),
             'country': ('django.db.models.fields.CharField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
-            'location': ('django.contrib.gis.db.models.fields.PointField', [], {}),
             'state': ('django.db.models.fields.CharField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
             'zipcode': ('django.db.models.fields.CharField', [], {'max_length': '30', 'null': 'True', 'blank': 'True'})
         },

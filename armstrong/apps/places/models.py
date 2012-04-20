@@ -11,7 +11,7 @@ class Place (Content):
   state = models.CharField(_('State/Province'), max_length=100, blank=True, null=True)
   country = models.CharField(max_length=100, blank=True, null=True)
   
-  location = models.PointField()
+  coordinate = models.PointField()
   
   objects = models.GeoManager()
   
